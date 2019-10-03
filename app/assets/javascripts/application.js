@@ -18,10 +18,11 @@ $(document).ready(function(){
     // $('h1+h3').remove();
     // $('body ul:first-of-type').remove();
     // $('[value = "1"]').remove();
-    $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
+    // $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
     $( "select" ).change(function() {
         $( "#projectName" ).remove();
-        $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
+        // $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
+        // $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
     });
     $('#pullForm').on('click', function() {
         $("#newTask").slideDown();
