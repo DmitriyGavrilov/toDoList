@@ -1,0 +1,30 @@
+<!--
+<h1>ToDoList#index</h1>
+<p>Find me in app/views/to_do_list/index.html.erb</p>
+-->
+<div id="mainBlock">
+<h1 style="margin-bottom:100px;">Задачи</h1>
+<span id="pullForm" style="float: right;margin-top: -140px;margin-right: 30px;font-size: 34px;display: block;background-color:#2c7fea;padding: 5px 10px;color:white;cursor: pointer;">+</span> 
+ <% @projects.each do |project| %>
+        <h3 style="text-transform: uppercase;"><%= project.title %></h3>
+        <% project.todos.each do |todo| %>
+        <ul>
+            <li><%= todo.text %></li>
+        </ul>
+        <% end %>
+    <% end %>
+    </div>
+
+    <div id="newTask" style="display:none;margin-left: 40%;margin-top: -340px;position: absolute;">
+    <h3 style="text-transform:uppercase">Новая задача</h3>
+    <%= form_for :todo_create, url: "/",:html => { :id => "form" } do |form| %>
+        <%= form.text_field :text, placeholder:"Название задачи...",  style: "margin-bottom: 5px" %>
+        <br>
+        <%= form.select(:project_id, @projects_titles, style: "margin-bottom:5px") %>
+        <span id="helper"></span>
+        <!--<span id="projectName">Семья</span>-->
+        <br style="display:block;margin-top:5px;">
+        <%= link_to "Отмена", '#', id: "cancel", style: "text-transform:uppercase;" %>
+        <%= link_to "Ок", '#', id: "index_path", style: "text-transform:uppercase" %>
+    <% end %>
+    </div>

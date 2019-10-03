@@ -13,3 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+    // $('body h3:first-of-type').remove();
+    // $('h1+h3').remove();
+    // $('body ul:first-of-type').remove();
+    // $('[value = "1"]').remove();
+    $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
+    $( "select" ).change(function() {
+        $( "#projectName" ).remove();
+        $( "#helper" ).append(`<span id="projectName"> ${$( "select option:selected" ).text()} </span>`);
+    });
+    $('#pullForm').on('click', function() {
+        $("#newTask").slideDown();
+        $('#mainBlock').css('opacity', '0.3');
+	});
+    $('#cancel').on('click', function() {
+        $("#newTask").slideUp();
+        $('#mainBlock').css('opacity', '1');
+	});
+});

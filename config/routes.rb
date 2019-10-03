@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'to_do_list/index'
+
+  get 'to_do_list/update'
+
+  get 'to_do_list/create'
+
+  root 'to_do_list#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
