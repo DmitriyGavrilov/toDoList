@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # test for check error
-ruby '2.5.6'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
